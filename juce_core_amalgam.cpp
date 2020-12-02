@@ -29596,7 +29596,7 @@ void File::revealToUser() const
    #else
 	#pragma warning (push)
 	#pragma warning (disable: 4090) // (alignment warning)
-	ITEMIDLIST* const itemIDList = ILCreateFromPath (fullPath.toWideCharPointer());
+	__unaligned ITEMIDLIST* const itemIDList = ILCreateFromPath (fullPath.toWideCharPointer());
 	#pragma warning (pop)
 
 	if (itemIDList != nullptr)
